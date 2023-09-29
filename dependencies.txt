@@ -1,0 +1,4 @@
+ npm install @hookform/resolvers
+ npm i react-hook-form
+ npm i react-router-dom
+ npm install yup
