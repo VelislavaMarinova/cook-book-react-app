@@ -54,6 +54,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
     const [auth, setToken, removeToken] = useLocalStorage('auth', {});
     const [error, setError] = useState('');
+  
 
     async function handleSignup(data) {
         try {
