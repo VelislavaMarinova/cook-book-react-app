@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../store/auth-context";
 
 const Header = ()=>{
+const{auth}=useAuth();
 
-const{auth}=useAuth()
+console.log(auth,"auth");
 
 return(
     <header className="header">
@@ -14,7 +15,7 @@ return(
           <Link to="/">Logo</Link>
         </div>
         <ul className="nav__elements">
-          {!auth && (
+          {!auth.user && (
             <>
               <li>
                 <Link to="auth/signin">
@@ -29,7 +30,7 @@ return(
             </>
           )}
           {/* Logged-in users */}
-          {auth && (
+          {auth.user && (
             <>
               <li>
                 Welcome, {auth.user.username}
